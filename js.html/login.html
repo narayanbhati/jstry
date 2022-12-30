@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="../style.css">
+    <title>Document</title>
+</head>
+<body>
+    
+    <form id="form" action="" id="login" >
+        <label for="name">name</label>
+        <input id="name" onclick="tot(this)" placeholder="enetr name"><br>
+        <label for="email">email</label>
+        <input  id="name"type="email" onclick="tot(this)" placeholder="email"><br>
+        <label for="female">female</label>
+        <input id="name" type="radio"onclick="tot(this)" name="login">
+        <label for="male">male</label>
+        <input id="name" type="radio"onclick="tot(this)" name="login"><br>
+    select city     <select id="name" name="city" id="" onclick="tot(this)" >
+         <option value="">select two</option>
+         <option value="bkn">bikaner</option>
+         <option value="jhod">jhodpur</option>
+         <option value="gang">ganganagar</option>
+        </select><br>
+         <label for="address">address</label>
+         <input id="name" type="address"onclick="tot(this)" placeholder="address"><br>
+         <button  onclick="sub()">submit</button>
+    </form>
+</body>
+</html>
+<script>
+    // function tot(obj){
+    //     if(obj.checked){
+    //         if(count.value<4){
+    //             alert("fill")
+    //         }else{
+    //             obj.checked=false
+    //         }
+            
+    //     }
+    // }
+    function sub(){
+var name;
+    name=document.getElementById('name').value;
+    if(!name)
+    alert('fill the full form');
+    }
+</script>

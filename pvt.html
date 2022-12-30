@@ -1,0 +1,109 @@
+<select  id="s1" onchange="showD()">
+    <option value="">select one</option>
+    <option>prime</option>
+    <option>factioral</option>
+    <option>armstrong</option>
+    <option>febronic</option>
+    <option>palno</option>
+</select>
+<select  id="tpy" onchange=" if(this.value=='single'){
+    multi.style.display='none';
+    singled.style.display='block';
+    }else{
+        multi.style.display='block';
+        singled.style.display='none';
+
+    }" style="display:none;">
+    <option>single</option>
+    <option>range</option>
+</select>
+<div id="singled" style="display:none;" >
+    <input type="number" id="single" onkeyup="btn.style.display=(this.value)?'':'none';" placeholder="enter value">
+</div>
+<div id="multi" style="display: none;" >
+    <input type="number" id="from" placeholder="enter from" onkeyup="showbtn()">
+    <input type="number" id="to" placeholder="enter to" onkeyup="showbtn()">
+</div>
+<div id="r"></div>
+<button id="btn" type="button" onclick="task()" style="display:none">ok</button>
+<script>
+function showD(){
+        if(s1.value){
+        tpy.style.display='';{
+        if(tpy.value=="single")
+          singled.style.display='block';
+        else
+            multi.style.display='block';
+      }
+    }else{
+        tpy.style.display=singled.style.display='none';
+
+    }
+}
+function showbtn(){
+    if(from.value && to.value){
+        btn.style.display='';
+    }else{
+        btn.style.display="none";
+    }
+}
+  function task(){
+    if(tpy.value=='single'){
+        switch(s1.value){
+        case "prime": 
+                var val=single.value;
+                f=0;
+                for(var i=2;i<val;i++){
+                    if(val%2==0){
+                        f=1;
+                        break;
+                    }
+                }
+                if(f==0){
+                    r.innerHTML= val+"value is prime";
+                }else{
+                    r.innerHTML= val+"value is not prime no";
+                    
+                } 
+                      break;
+        case "factioral": alert("single factorial");
+                      break;
+        case "armstrong": alert("single armstrong");
+                      break;
+        case "febonic": alert("single febronic");
+                      break;
+        case "palno": alert("single palno");
+                      break;
+      }
+    }else{
+      switch(s1.value){
+        case "prime":
+            let counter=0;
+            for(var m=from.value;m<=to.value;m++){
+                var val=m;
+                f=0;
+                for(var i=2;i<val;i++){
+                    if(val%i==0){
+                        f=1;
+                        break;
+                    }
+                }
+                if(f==0){
+                    r.innerHTML+= val+"value is prime no <br>";
+                    counter++;
+                }
+            }
+            r.innerHTML+="<b> total is :"+counter+"</b>"
+                      break;
+        case "factioral": alert("b factorial");
+                      break;
+        case "armstrong": alert("c armstrong");
+                      break;
+        case "febonic": alert("d febronic");
+                      break;
+        case "palno": alert("e palno");
+                      break;
+      }
+    }
+  }
+</script>
